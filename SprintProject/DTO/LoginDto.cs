@@ -2,8 +2,8 @@
 {
     internal class LoginDto
     {
-        public int EmployeeId { get; set; }
-        public Role Role { get; set; }
+        public string Username { get; set; }
+        public Designation Designation { get; set; }
         public string Token { get; set; }
     }
 }

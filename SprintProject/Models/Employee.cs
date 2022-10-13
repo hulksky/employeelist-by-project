@@ -19,5 +19,7 @@ namespace SprintProject.Models
         public int ProjectId { get; set; }
         public virtual Project? Project { get; set; }
 
+        public Designation Designation { get; set; }
+
     }
 }

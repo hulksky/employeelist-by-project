@@ -10,9 +10,12 @@ namespace SprintProject.Models
         [Required]
         public string Password { get; set; }
         [Required]
+        public string Username { get; set; }      
+
+        [Required]
         public int EmployeeId { get; set; }
         public virtual Employee? Employee { get; set; }
-        public Role Role { get; set; }
+        public Designation Designation{ get; set; }
 
     }
 }

@@ -100,7 +100,7 @@ namespace SprintProject.Controllers
             {
                 //user exists?
                 var existingUser = _context.Users.FirstOrDefault(
-                    u => u.EmployeeId == user.EmployeeId
+                    u => u.Username == user.Username
                     && u.Password == user.Password);
 
                 //not correct => 404 not found
@@ -111,8 +111,8 @@ namespace SprintProject.Controllers
                 //correct => Ok(loginDto)
                 LoginDto loginDto = new LoginDto
                 {
-                    EmployeeId = user.EmployeeId,
-                    Role = existingUser.Role,
+                    Username = user.Username,
+                    Designation = existingUser.Designation,
                     Token = GenerateJwtToken(existingUser)
                 };
                 return Ok(loginDto);
@@ -148,7 +148,7 @@ namespace SprintProject.Controllers
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim("id", existingUser.Id.ToString()),
-                    new Claim("role", existingUser.Role.ToString())
+                    new Claim("role", existingUser.Designation.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddDays(expiryDays),
                 SigningCredentials = new SigningCredentials(
