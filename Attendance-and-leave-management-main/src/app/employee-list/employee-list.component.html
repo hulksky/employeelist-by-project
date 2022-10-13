@@ -1,0 +1,32 @@
+<h2>Employee List</h2>
+<a [routerLink]="['add']" class="btn btn-link">Add Employee</a>
+<table class="table table-striped">
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Date Of Birth</th>
+        <!-- <th>Manager Id</th> -->
+        <th>Email</th>
+        <th>Mobile No</th>
+        <th>Project Id</th>
+        <th>Designation</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of empList">
+            <td>{{e.id}}</td>
+            <td>{{e.name}}</td>
+            <td>{{e.dateOfBirth | date}}</td>
+            <!-- <td>{{e.managerId}}</td> -->
+            <td>{{e.email}}</td>
+            <td>{{e.mobileNo}}</td>
+            <td>{{e.projectId}}</td>
+            <td>{{designation[e.designation]}}</td>
+            <td>
+                <button [routerLink]="['update',e.id]" class="btn btn-primary">Update</button>
+                <button (click)="delete(e.id)" class="btn btn-danger">Delete</button>
+
+
+            </td>
+        </tr>
+    </tbody>
+</table>

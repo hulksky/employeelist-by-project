@@ -1,0 +1,26 @@
+<h2>Update Project</h2>
+<form [formGroup]="projForm" (ngSubmit)="onSubmit()">
+    <div class ="form-group">
+        <label for ="id">Project Id</label>
+        
+        <input type ="text" class="form-control" 
+        formControlName="id" readonly>
+        </div>
+    <div class ="form-group">
+        <label for ="name">Name</label>
+        
+        <input type ="text" class="form-control" 
+        formControlName="name">
+        </div>
+    <div class ="form-group">
+        <label for ="domain">Domain</label>
+        <input type ="text" class="form-control" 
+        formControlName="domain">
+    </div>
+    <div class="form-group">
+        <button type = "submit" class = 'btn btn-primary'
+        [disabled]="!projForm.valid">Update</button>
+        <button class = 'btn btn-secondary' [routerLink]="['/projects']">Project List</button>
+    </div>
+
+</form>

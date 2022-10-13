@@ -1,0 +1,51 @@
+<h2>Add Employee</h2>
+<form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control"
+            formControlName="name">
+    </div>
+    <div class="form-group">
+        <label for="dateOfBirth">Date Of Birth</label>
+        <input type="date" class="form-control"
+            formControlName="dateOfBirth">
+    </div>
+    <div class="form-group">
+        <label for="managerId">Manager Id</label>
+        <input type="number" class="form-control"
+            formControlName="managerId">
+    </div>
+   
+    <div class="form-group">
+        <label for="email">Email Id</label>
+        <input type="email" class="form-control"
+            formControlName="email">
+    </div>
+    <div class="form-group">
+        <label for="mobileNo">Mobile No</label>
+        <input type="number" class="form-control"
+            formControlName="mobileNo">
+    </div>
+    <div class="form-group">
+        <label for="projectId">Project Id</label>
+        <input type="number" class="form-control"
+            formControlName="projectId">
+    </div>
+    <div class="form-group">
+        <label for="designation">Designation</label>
+        <div *ngFor="let emp of designation |keyvalue">
+          <div *ngIf="isNumber(emp.value)">
+          
+            <input type="radio" [value]=emp.value formControlName="designation"> {{emp.key}}
+            
+         </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary"
+            >Add</button>
+    
+    </div>
+</form>
