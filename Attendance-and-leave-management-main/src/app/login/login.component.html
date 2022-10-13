@@ -1,6 +1,7 @@
 <section class="Register">
     <div class="container">
         <form (ngSubmit)="onSubmit()" [formGroup]="changeForm">
+        
             <input type="text" class="input" placeholder="Username" name="username" formControlName ="username">
         
             <div class="err" *ngIf="submitted && changeForm.get('username')?.errors">

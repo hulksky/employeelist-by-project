@@ -11,7 +11,18 @@ export class AppComponent {
   title = 'EmpAngularApp';
   constructor(private userService:UserService){}
 
-  isLoggedIn(){}
+  isEmpLoggedIn(){
+    return this.userService.isEmpLoggedIn();
+  }
+
+  isManLoggedIn(){
+    return this.userService.isManLoggedIn();
+  }
+  
+  isLoggedIn():boolean{
+    return this.userService.isLoggedIn();  
+  }
+
 
   logout(){
     this.userService.logout();

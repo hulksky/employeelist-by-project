@@ -45,6 +45,24 @@ export class UserService {
     return this.client.get<User>(`${this.apiUrl}/${id}`);
   }
 
+  isEmpLoggedIn():boolean{
+    var values = JSON.parse(localStorage.getItem('UserInfo') || '{}');    
+    if(values.designation == 3) return true;
+    return false;
+  }
+
+  isManLoggedIn():boolean{
+    var values = JSON.parse(localStorage.getItem('UserInfo') || '{}');    
+    if(values.designation == 0) return true;
+    return false;
+  }
+
+  isLoggedIn():boolean{
+    if(localStorage.getItem('UserInfo') == null) return false;
+      return true;
+  
+  }
+
   logout(){
     localStorage.removeItem('UserInfo');
   }

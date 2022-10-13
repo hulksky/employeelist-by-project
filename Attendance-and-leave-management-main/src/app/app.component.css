@@ -1,0 +1,18 @@
+header h1 {
+    font-size: 70px;
+    font-weight: 600;
+    align-items : center;
+    text-align: center;
+    background-image: linear-gradient(to left, #bd260b, #cf9c72);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  @media (min-width: 768px) {
+    .navbar-nav.navbar-center {
+      position: absolute;
+      left: 50%;
+      transform: translatex(-50%);
+    }
+  }
+

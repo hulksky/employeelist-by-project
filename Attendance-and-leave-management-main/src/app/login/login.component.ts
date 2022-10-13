@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
       alert('User Login Successfull');
       this.router.navigate(['\home']);
     },err => {
+      alert("Worng Username or Password")
       console.log(err);
     })
 

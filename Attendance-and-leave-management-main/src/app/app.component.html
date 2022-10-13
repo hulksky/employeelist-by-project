@@ -1,35 +1,56 @@
-<h1>Welcome</h1>
+<header>
+<h1>Employee Management System</h1>
+</header>
     
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-  <a class="navbar-brand" href="#">My Application</a>
+<nav class="navbar navbar-expand-md navbar-light bg-primary">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+  <div *ngIf="isEmpLoggedIn()" class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <ul class="navbar-nav  mr-auto">
       <li class="nav-item active">
           <a class="nav-link" [routerLink] = "['home']">Home <span class="sr-only"></span></a>
-        </li>
-      
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink] = "['attendances/add']">Attendance <span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink] = "['leave/add']">Leave <span class="sr-only"></span></a>
+      </li>
+    </ul>   
+  </div>
+
+  <div *ngIf="isManLoggedIn()" class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <ul class="navbar-nav  mr-auto">
+      <li class="nav-item active">
+          <a class="nav-link" [routerLink] = "['home']">Home <span class="sr-only"></span></a>
+      </li>
       <li class="nav-item active">
         <a class="nav-link" [routerLink] = "['employees']">Employee <span class="sr-only"></span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink] = "['attendances']" >Attendance</a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink] = "['leave/add']">Leave <span class="sr-only"></span></a>
+      </li>
       <li class="nav-item">
-          <a class="nav-link" >Leave</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink] = "['/projects']" >Project</a>
-        </li>
+        <a class="nav-link" [routerLink] = "['/projects']" >Project</a>
+      </li>
+    </ul>   
+  </div>
+
+
+  <div *ngIf="isLoggedIn()"  class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <ul class="navbar-nav  mr-auto">
         <li class="nav-item">
           <a class="nav-link" [routerLink] = "['/changepassword']">Change Password</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink] = "['']"  (click)="logout()">Logout</a>
+          <a class="nav-link" style="float:right;" [routerLink] = "['']"  (click)="logout()">Logout</a>
         </li>
     </ul>
   </div>
 </nav>
+
 <router-outlet></router-outlet>
