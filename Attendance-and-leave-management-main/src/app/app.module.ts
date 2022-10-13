@@ -14,6 +14,9 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { AddProjectComponent } from './add-project/add-project.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { UpdateProjectComponent } from './update-project/update-project.component';
+import { AttendenceListComponent } from './attendence-list/attendence-list.component';
+import { AddAttendanceComponent } from './add-attendance/add-attendance.component';
+import { UpdateAttendanceComponent } from './update-attendance/update-attendance.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { UpdateProjectComponent } from './update-project/update-project.componen
     ChangePasswordComponent,
     AddProjectComponent,
     ProjectListComponent,
-    UpdateProjectComponent
+    UpdateProjectComponent,
+    AttendenceListComponent,
+    AddAttendanceComponent,
+    UpdateAttendanceComponent
   ],
   imports: [
     BrowserModule,

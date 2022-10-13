@@ -9,6 +9,9 @@ import { LoginComponent } from './login/login.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { UpdateProjectComponent } from './update-project/update-project.component';
+import { AddAttendanceComponent } from './add-attendance/add-attendance.component';
+import { AttendenceListComponent } from './attendence-list/attendence-list.component';
+import { UpdateAttendanceComponent } from './update-attendance/update-attendance.component';
 
 const routes: Routes = [
   {path:'projects' , component : ProjectListComponent},
@@ -19,7 +22,11 @@ const routes: Routes = [
   {path:'employees/add',component:AddEmployeeComponent},
   {path:'employees/update/:id',component:UpdateEmployeeComponent},
   {path:"",component:LoginComponent},
-  {path:"changepassword",component:ChangePasswordComponent}
+  {path:"changepassword",component:ChangePasswordComponent},
+  {path:'attendances',component:AttendenceListComponent},
+  {path:'attendances/add',component:AddAttendanceComponent},
+  {path:'attendances/update/:id',component:UpdateAttendanceComponent},
+  
 ];
 
 @NgModule({

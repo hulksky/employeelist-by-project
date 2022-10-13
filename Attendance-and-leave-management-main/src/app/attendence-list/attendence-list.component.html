@@ -1,0 +1,24 @@
+<a [routerLink]="['add']">Add Attendance</a>
+<table class="'table table-striped">
+ 
+    <thead>
+        <th>Id</th>
+        <th>EmployeeId</th>
+        <th>Date</th>
+        <th>Status</th>
+
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of attList">
+            <td>{{e.id}}</td>
+            <td>{{   e.employeeId}}</td>
+            <td>{{e.dateTime | date :'dd mm yyyy'}}</td>
+            <td>{{e.status}}</td>
+          <td>
+            <button [routerLink]="['update',e.id]" class="btn btn-primary">Update</button>
+            <button (click)="delete(e.id)" class="btn btn-danger">Delete</button>
+          </td>
+           
+    </tbody>
+</table>
