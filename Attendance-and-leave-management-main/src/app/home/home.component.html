@@ -12,21 +12,24 @@
  
   <div class="container">
     <div class="row card-group">
-        <div class="col-4" *ngFor="let e of empList">
+        <!--<div class="col-4" *ngFor="let e empList">-->
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Id: {{e.id}}</h5>
-                    <h5 class="card-title">Name: {{e.name}}</h5>
-                    <h5 class="card-title">Date Of Birth: {{e.dateOfBirth}}</h5>
-                    <h5 class="card-title">Email Id: {{e.email}}</h5>
-                    <h5 class="card-title">Mobile No: {{e.mobileNo}}</h5>
-                    <h5 class="card-title">Project Id: {{e.projectId}}</h5>
-                    <h5 class="card-title">Designation: {{designation[e.designation]}}</h5>
+                    <h5 class="card-title">Id: {{empList.id}}</h5>
+                    <h5 class="card-title">Name: {{empList.name}}</h5>
+                    <h5 class="card-title">Date Of Birth: {{empList.dateOfBirth}}</h5>
+                    <h5 class="card-title">Email Id: {{empList.email}}</h5>
+                    <h5 class="card-title">Mobile No: {{empList.mobileNo}}</h5>
+                    <h5 class="card-title">Project Id: {{empList.projectId}}</h5>
+                    <h5 class="card-title">Designation: {{designation[empList.designation]}}</h5>
                     
                 </div>
                 
             </div>
-        </div>
     </div>
-    <router-outlet></router-outlet>
-  </div>
+</div>
+
+<router-outlet></router-outlet>
+    
+    
+    

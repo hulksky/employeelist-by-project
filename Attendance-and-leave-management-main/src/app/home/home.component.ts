@@ -9,15 +9,17 @@ import { EmployeeService } from '../services/employee.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  empList! :Employee[];
+  empid!:number;
+  empList! :Employee;
   designation=Designation;
   constructor(private empService:EmployeeService) { }
 
   ngOnInit(): void {
-    this.empService.getEmpList().subscribe(list=>{
-      console.log(list);
-      this.empList=list;
+    var values = JSON.parse(localStorage.getItem('UserInfo') || '{}');    
+    this.empid = values.employeeId;
+    this.empService.getListById(this.empid).subscribe(emp=>{
+      console.log(emp);
+      this.empList=emp;
     },err=>{
       console.log(err);
       alert('API call failed');
