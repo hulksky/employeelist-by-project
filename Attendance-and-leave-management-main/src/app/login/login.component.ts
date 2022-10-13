@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void { 
     this.changeForm = this.builder.group({
-      employeeId:new FormControl("",Validators.required),
+      username:new FormControl("",Validators.required),
       password:new FormControl("",[Validators.required,Validators.minLength(6)])
 
   
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.userService.login(this.changeForm.value as unknown as User).subscribe(result => {      
-      alert('User Register Successfull');
+      alert('User Login Successfull');
       this.router.navigate(['\home']);
     },err => {
       console.log(err);

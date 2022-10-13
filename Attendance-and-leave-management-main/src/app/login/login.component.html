@@ -1,10 +1,10 @@
 <section class="Register">
     <div class="container">
         <form (ngSubmit)="onSubmit()" [formGroup]="changeForm">
-            <input type="text" class="input" placeholder="Username" name="employeeId" formControlName ="employeeId">
+            <input type="text" class="input" placeholder="Username" name="username" formControlName ="username">
         
-            <div class="err" *ngIf="submitted && changeForm.get('employeeId')?.errors">
-                <div *ngIf="changeForm.get('employeeId')?.errors?.['employeeId']"> Username is required</div>
+            <div class="err" *ngIf="submitted && changeForm.get('username')?.errors">
+                <div *ngIf="changeForm.get('username')?.errors?.['username']"> Username is required</div>
             </div>
   
             <input type="password" class="input" placeholder="password" name="password" formControlName ="password">       

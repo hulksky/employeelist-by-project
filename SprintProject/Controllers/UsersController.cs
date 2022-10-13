@@ -111,6 +111,7 @@ namespace SprintProject.Controllers
                 //correct => Ok(loginDto)
                 LoginDto loginDto = new LoginDto
                 {
+                    EmployeeId = existingUser.EmployeeId,
                     Username = user.Username,
                     Designation = existingUser.Designation,
                     Token = GenerateJwtToken(existingUser)

@@ -28,6 +28,7 @@ export class ChangePasswordComponent implements OnInit {
     this.userService.getListById(this.empid).subscribe(emp =>{
     this.changeForm = this.builder.group({
       id: new FormControl(emp.id),
+      username:new FormControl(emp.username),
       employeeId:new FormControl(emp.employeeId,Validators.required),
       password:new FormControl("",[Validators.required,Validators.minLength(6)]),
       role:new FormControl(emp.role),
@@ -59,7 +60,7 @@ export class ChangePasswordComponent implements OnInit {
     }
     console.log(this.changeForm.value as unknown as User );
     this.userService.changePassowrd(this.changeForm.value as unknown as User).subscribe(result => {      
-      alert('User Register Successfull');
+      alert('Password Change Successfull');
       this.router.navigate(['']);
     },err => {
 
