@@ -12,6 +12,7 @@ namespace SprintProject.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class AttendancesController : ControllerBase
     {
         private readonly EmsContext _context;
@@ -29,10 +30,11 @@ namespace SprintProject.Controllers
         }
 
         // GET: api/Attendances/5
+
         [HttpGet("{id}")]
-        public async Task<ActionResult<Attendance>> GetAttendance(int id)
+        public async Task<ActionResult<IEnumerable<Attendance>>> GetAttendanceWithdate(DateTime date)
         {
-            var attendance = await _context.Attendances.FindAsync(id);
+            var attendance = await _context.Attendances.Where(x =>x.DateTime == date).ToListAsync(); ;
 
             if (attendance == null)
             {

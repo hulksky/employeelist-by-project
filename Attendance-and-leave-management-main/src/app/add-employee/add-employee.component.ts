@@ -3,7 +3,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Designation } from '../models/designation';
 import { Employee } from '../models/employee';
+import { User } from '../models/user';
 import { EmployeeService } from '../services/employee.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -15,10 +17,11 @@ export class AddEmployeeComponent implements OnInit {
   empForm!: FormGroup;
   empList!: Employee[];
 
+
   designation= Designation;
   
   constructor(private empService: EmployeeService,
-    private router: Router) { }
+    private router: Router, private userService:UserService) { }
 
   ngOnInit(): void {
     this.empService.getEmpList().subscribe(list=>{
@@ -38,13 +41,14 @@ export class AddEmployeeComponent implements OnInit {
       "designation": new FormControl("",Validators.required),
       
     });
+
+
   }
 
   onSubmit(){
-    console.log(this.empForm);
+    //console.log(this.empForm);
      //services
-     this.empService.add(this.empForm.value as unknown as Employee).subscribe(result=>{
-      alert('Employee added successfully');
+     this.empService.add(this.empForm.value as unknown as Employee).subscribe(result=>{     
       //redirect to emp List
       this.router.navigate(['/employees']);
      },err=>{

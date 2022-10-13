@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,13 +12,16 @@ namespace SprintProject.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class EmployeesController : ControllerBase
     {
         private readonly EmsContext _context;
+        //private UsersController userCon;
 
         public EmployeesController(EmsContext context)
         {
             _context = context;
+            //this.userCon = userCon;
         }
 
         // GET: api/Employees
@@ -79,6 +83,7 @@ namespace SprintProject.Controllers
         // POST: api/Employees
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        
 
 
         public async Task<ActionResult<Employee>> PostEmployee(Employee employee)
@@ -87,6 +92,19 @@ namespace SprintProject.Controllers
             {
                 return BadRequest(ModelState);
             }
+
+/*            User user = new User
+            {
+                
+                Password = "abcd@123",
+                Username = employee.Name.Substring(5),
+                EmployeeId = employee.Id,
+                Employee = null,
+                Designation = employee.Designation
+
+            };*/
+            
+            /*userCon.Register(user);*/
           
             _context.Employees.Add(employee);
             await _context.SaveChangesAsync();

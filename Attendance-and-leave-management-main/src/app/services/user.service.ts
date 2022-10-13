@@ -62,7 +62,10 @@ export class UserService {
       return true;
   
   }
-
+  getUser():LoginDto{
+    return JSON.parse(localStorage.getItem('UserInfo') || '{}');
+  
+  }
   logout(){
     localStorage.removeItem('UserInfo');
   }

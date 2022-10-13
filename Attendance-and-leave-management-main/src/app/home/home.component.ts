@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
     var values = JSON.parse(localStorage.getItem('UserInfo') || '{}');    
     this.empid = values.employeeId;
     this.empService.getListById(this.empid).subscribe(emp=>{
-      console.log(emp);
+      //console.log(emp);
       this.empList=emp;
     },err=>{
       console.log(err);
