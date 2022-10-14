@@ -1,6 +1,5 @@
 <a [routerLink]="['add']">Add Attendance</a>
-<table class="'table table-striped">
- 
+<table class="table table-striped"> 
     <thead>
         <th>Id</th>
         <th>EmployeeId</th>
@@ -14,7 +13,7 @@
             <td>{{e.id}}</td>
             <td>{{   e.employeeId}}</td>
             <td>{{e.dateTime | date :'dd mm yyyy'}}</td>
-            <td>{{e.status}}</td>
+            <td>{{status[e.status]}}</td>
           <td>
             <button [routerLink]="['update',e.id]" class="btn btn-primary">Update</button>
             <button (click)="delete(e.id)" class="btn btn-danger">Delete</button>

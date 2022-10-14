@@ -1,5 +1,5 @@
 export enum Designation {
-    admin=1,
-    manager,
-    analyst
+    Admin=0,
+    Manager,
+    Analyst
 }

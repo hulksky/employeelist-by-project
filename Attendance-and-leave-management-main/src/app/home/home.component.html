@@ -15,12 +15,12 @@
         <!--<div class="col-4" *ngFor="let e empList">-->
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Id: {{empList.id}}</h5>
+                    <h5 class="card-title">Employee Id: {{empList.id}}</h5>
                     <h5 class="card-title">Name: {{empList.name}}</h5>
-                    <h5 class="card-title">Date Of Birth: {{empList.dateOfBirth}}</h5>
+                    <h5 class="card-title">Date Of Birth: {{empList.dateOfBirth | date}}</h5>
                     <h5 class="card-title">Email Id: {{empList.email}}</h5>
                     <h5 class="card-title">Mobile No: {{empList.mobileNo}}</h5>
-                    <h5 class="card-title">Project Id: {{empList.projectId}}</h5>
+                    <h5 class="card-title">Project: {{project.name}}</h5>
                     <h5 class="card-title">Designation: {{designation[empList.designation]}}</h5>
                     
                 </div>

@@ -12,6 +12,8 @@ import { UpdateProjectComponent } from './update-project/update-project.componen
 import { AddAttendanceComponent } from './add-attendance/add-attendance.component';
 import { AttendenceListComponent } from './attendence-list/attendence-list.component';
 import { UpdateAttendanceComponent } from './update-attendance/update-attendance.component';
+import { LeaveListComponent } from './leave-list/leave-list.component';
+import { AddLeaveComponent } from './add-leave/add-leave.component';
 
 const routes: Routes = [
   {path:'projects' , component : ProjectListComponent},
@@ -26,6 +28,8 @@ const routes: Routes = [
   {path:'attendances',component:AttendenceListComponent},
   {path:'attendances/add',component:AddAttendanceComponent},
   {path:'attendances/update/:id',component:UpdateAttendanceComponent},
+  {path:'leaves',component:LeaveListComponent},
+  {path:'leaves/add',component:AddLeaveComponent}
   
 ];
 

@@ -1,4 +1,5 @@
 import { Designation } from "./designation";
+import { Project } from "./project";
 
 export class Employee {
     id!: number;
@@ -8,5 +9,6 @@ export class Employee {
     email!: string;
     mobileNo!: number;
     projectId!: number;
+    project!:Project;
     designation!: Designation;
 }

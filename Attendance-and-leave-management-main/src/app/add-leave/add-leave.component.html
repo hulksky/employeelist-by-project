@@ -1,0 +1,50 @@
+<h2>Add leave</h2>
+<form [formGroup]="leaveForm" (ngSubmit)="onSubmit()"> 
+    <div class="form-group">
+        <label for="employeeId">Employee Id</label>
+        <input type="number" class="form-control" formControlName = "employeeId">
+    </div>
+    <div class="form-group">
+        <label for="leaveType">Leave Type</label>
+        <div *ngFor="let e of leavetype |keyvalue">
+          <div *ngIf="isNumber(e.value)">          
+            <input type="radio" [value]=e.value formControlName="leaveType"> {{e.key}}            
+         </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="statusType">Status</label>
+        <div *ngFor="let emp of statustype |keyvalue">
+          <div *ngIf="isNumber(emp.value)">          
+            <input type="radio" [value]=emp.value formControlName="statusType"> {{emp.key}}
+            
+         </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="managerId">Manager Id</label>
+        <input type="number" class="form-control" formControlName = "managerId">
+    </div>
+    <div class="form-group">
+        <label for="requestedDays">Requested Days</label>
+        <input type="number" class="form-control" formControlName = "requestedDays">
+    </div>
+    <div class="form-group">
+        <label for="startDate">Start Date</label>
+        <input type="date" class="form-control" formControlName = "startDate">
+    </div>
+    <div class="form-group">
+        <label for="endDate">End Date</label>
+        <input type="date" class="form-control" formControlName = "endDate">
+    </div>
+    <div class="form-group">
+        <label for="reason">Reason</label>
+        <input type="text" class="form-control" formControlName = "reason">
+    </div>
+    <div class="form-group">
+        <button type="Submit" [disabled]="!leaveForm.valid">Submit</button>
+        <button>back</button>
+    </div>
+
+    
+</form>

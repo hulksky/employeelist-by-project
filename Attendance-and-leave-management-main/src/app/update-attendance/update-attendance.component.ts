@@ -12,25 +12,27 @@ import { AttendanceService } from '../services/attendance.service';
 })
 export class UpdateAttendanceComponent implements OnInit {
   attForm!:FormGroup;
+  
   status=Status;
     constructor(private attService:AttendanceService,private router:Router,private route:ActivatedRoute) { }
   
-    ngOnInit(): void {let attId=this.route.snapshot.params['id'];
-    console.log('Att id' + attId);
-  
-    this.attService.getById(attId).subscribe(att=>{
-      this.attForm=new FormGroup(
-        {
-          "id":new FormControl(att.id),
-       "employeeId":new FormControl(att.employeeId,Validators.required),
-       "dateTime":new FormControl(att.dateTime,Validators.required),
-       "status":new FormControl(att.status,Validators.required)
-  
-        });
-      }, err=>{
+    ngOnInit(): void {      
+      let attId=this.route.snapshot.params['id'];
+      this.attService.getById(attId).subscribe(att=>{
+      this.attForm =new FormGroup({
+        
+        "id": new FormControl(attId),
+        "employeeId": new FormControl(att.employeeId,Validators.required),
+        "dateTime": new FormControl(att.dateTime, Validators.required),
+        "status": new FormControl(att.status, Validators.required)});
+
+      },err=>{
         alert(err);
-      })
+      });
     }
+
+
+
     onSubmit()
     {
       console.log(this.attForm.value);

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Attendance } from '../models/attendance';
+import { Status } from '../models/status';
 import { AttendanceService } from '../services/attendance.service';
 
 @Component({
@@ -9,11 +10,12 @@ import { AttendanceService } from '../services/attendance.service';
 })
 export class AttendenceListComponent implements OnInit {
   attList!:Attendance[];
+  status = Status;
   constructor(private attService:AttendanceService) { }
 
   ngOnInit(): void {
     this.attService.getList().subscribe(list=>{
-      console.log(list);
+      //console.log(list);
       this.attList=list;
     }, err=>{
       console.log(err);

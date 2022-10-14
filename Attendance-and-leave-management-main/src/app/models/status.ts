@@ -1,4 +1,4 @@
 export enum Status {
-    absent=0,
-    present
+    Absent=0,
+    Present
 }

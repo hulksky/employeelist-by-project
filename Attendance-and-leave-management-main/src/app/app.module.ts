@@ -18,6 +18,8 @@ import { AttendenceListComponent } from './attendence-list/attendence-list.compo
 import { AddAttendanceComponent } from './add-attendance/add-attendance.component';
 import { UpdateAttendanceComponent } from './update-attendance/update-attendance.component';
 import { JwtInterceptor } from './services/jwt.interceptor';
+import { LeaveListComponent } from './leave-list/leave-list.component';
+import { AddLeaveComponent } from './add-leave/add-leave.component';
 
 @NgModule({
   declarations: [
@@ -33,13 +35,16 @@ import { JwtInterceptor } from './services/jwt.interceptor';
     UpdateProjectComponent,
     AttendenceListComponent,
     AddAttendanceComponent,
-    UpdateAttendanceComponent
+    UpdateAttendanceComponent,
+    LeaveListComponent,
+    AddLeaveComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule
+    HttpClientModule
+   
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptor,multi:true}

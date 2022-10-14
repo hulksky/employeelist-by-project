@@ -19,7 +19,7 @@
             <!-- <td>{{e.managerId}}</td> -->
             <td>{{e.email}}</td>
             <td>{{e.mobileNo}}</td>
-            <td>{{e.projectId}}</td>
+            <td>{{e.project.name}}</td>
             <td>{{designation[e.designation]}}</td>
             <td>
                 <button [routerLink]="['update',e.id]" class="btn btn-primary">Update</button>

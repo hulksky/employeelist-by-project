@@ -1,0 +1,32 @@
+<h2>Leave Details</h2>
+<a [routerLink]="['add']" class="btn btn-primary">Leave Request</a>
+<table class="table table-striped">
+    <thead>
+        <th>EmployeeId</th>
+        <th>LeaveType</th>
+        <th>RequestedDays</th>
+        <th>StartDate</th>
+        <th>EndDate</th>
+        <th>StatusType</th>
+        <th>Reason</th>
+        <!-- <th>Manager Id</th> -->
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of leaveList">           
+            <td>{{e.employeeId}}</td>
+            <td>{{leavetype[e.leaveType]}}</td>
+            <td>{{e.requestedDays}}</td>
+            <td>{{e.startDate | date}}</td>
+            <td>{{e.endDate | date}}</td>
+            <td>{{statustype[e.statusType]}}</td>
+            <td>{{e.reason}}</td>
+            <!-- <td>{{e.managerId}}</td> -->
+            <td>
+                <button [routerLink]="['update',e.id]" class="btn btn-primary">Verify</button>
+
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
