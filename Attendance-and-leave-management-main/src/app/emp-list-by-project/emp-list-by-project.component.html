@@ -1,0 +1,38 @@
+
+<form [formGroup]="projForm" (ngSubmit)="onSubmit()">
+    <div class ="form-group">
+        <label for ="id">Project Id</label>
+        
+        <input type ="number" class="form-control" 
+        formControlName="id">
+        </div>
+        <div class="form-group">
+            <button type = "submit" class = 'btn btn-primary'
+            [disabled]="!projForm.valid">Submit</button>
+            <button class = 'btn btn-secondary'>Project List</button>
+        </div>
+        </form>
+
+        <table class="table table-striped">
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Date Of Birth</th>
+                <!-- <th>Manager Id</th> -->
+                <th>Email</th>
+                <th>Mobile No</th>
+                <th>Project Id</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of empList">
+                    <td>{{e.id}}</td>
+                    <td>{{e.name}}</td>
+                    <td>{{e.dateOfBirth | date}}</td>
+                    <!-- <td>{{e.managerId}}</td> -->
+                    <td>{{e.email}}</td>
+                    <td>{{e.mobileNo}}</td>
+                    <td>{{e.project.name}}</td>  
+                </tr>
+            </tbody>
+        </table>
+        

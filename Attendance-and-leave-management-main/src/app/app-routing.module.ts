@@ -14,11 +14,13 @@ import { AttendenceListComponent } from './attendence-list/attendence-list.compo
 import { UpdateAttendanceComponent } from './update-attendance/update-attendance.component';
 import { LeaveListComponent } from './leave-list/leave-list.component';
 import { AddLeaveComponent } from './add-leave/add-leave.component';
+import { EmpListByProjectComponent } from './emp-list-by-project/emp-list-by-project.component';
 
 const routes: Routes = [
   {path:'projects' , component : ProjectListComponent},
   {path:'projects/add' , component : AddProjectComponent},
   {path:'projects/update/:id' , component : UpdateProjectComponent},
+  {path:'projects/empListByProject/:id' , component : EmpListByProjectComponent},
   {path:'home',component:HomeComponent},
   {path:'employees',component:EmployeeListComponent},
   {path:'employees/add',component:AddEmployeeComponent},

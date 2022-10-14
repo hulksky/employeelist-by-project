@@ -44,6 +44,18 @@ namespace SprintProject.Controllers
 
             return employee;
         }
+        [HttpPost("{projectId}")]
+        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployeeWithProjectId(int projectId)
+        {
+            var employee = await _context.Employees.Where(x => x.ProjectId == projectId).ToListAsync();
+
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            return employee;
+        }
 
         // PUT: api/Employees/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

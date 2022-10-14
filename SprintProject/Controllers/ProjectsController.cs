@@ -12,7 +12,7 @@ namespace SprintProject.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class ProjectsController : ControllerBase
     {
         private readonly EmsContext _context;

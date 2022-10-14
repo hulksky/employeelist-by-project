@@ -34,4 +34,8 @@ export class EmployeeService {
   getListById(id:number):Observable<Employee>{
     return this.client.get<Employee>(`${this.apiUrl}/${id}`);
   }
+  getByProjectId(id:number):Observable<Employee[]>{
+    return this.client.post<Employee[]>(this.apiUrl,id, this.httpoptions);
+
+}
 }

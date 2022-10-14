@@ -47,13 +47,13 @@ export class UserService {
 
   isEmpLoggedIn():boolean{
     var values = JSON.parse(localStorage.getItem('UserInfo') || '{}');    
-    if(values.designation == 3) return true;
+    if(values.designation == 2) return true;
     return false;
   }
 
   isManLoggedIn():boolean{
     var values = JSON.parse(localStorage.getItem('UserInfo') || '{}');    
-    if(values.designation == 0) return true;
+    if(values.designation == 1) return true;
     return false;
   }
 

@@ -13,6 +13,7 @@
             <td>{{d.name}}</td>
             <td>{{d.domain}}</td>
             <td>
+                <button class = "btn btn-primary" [routerLink]="['empListByProject',d.id]" >Employee List</button>
                 <button class = "btn btn-primary" [routerLink]="['update',d.id]" >Update</button>
                 <button (click)="delete(d.id)" class = "btn btn-danger">Delete</button>
             </td>
